@@ -4,13 +4,13 @@
 
 #include "CoreMinimal.h"
 #include "BattleTank.h"
-#include "Tank.h"
 #include "GameFramework/Controller.h"
 #include "GameFramework/PlayerController.h"
 #include "Engine/World.h"
 #include "Camera/PlayerCameraManager.h"
 #include "TankPlayerController.generated.h"
 
+class ATank;
 /**
  * 
  */
