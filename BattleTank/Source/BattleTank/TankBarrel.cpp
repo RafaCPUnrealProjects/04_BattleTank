@@ -4,7 +4,7 @@
 
 void UTankBarrel::Elevate(float RelativeSpeed)
 {
-
+	auto Time = GetWorld()->GetTimeSeconds();
 }
 
 
