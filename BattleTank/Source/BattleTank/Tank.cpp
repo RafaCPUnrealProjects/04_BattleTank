@@ -7,6 +7,7 @@
 #include "Projectile.h"
 #include "Engine/World.h"
 #include "Engine/StaticMeshSocket.h"
+#include "TankMovementComponent.h"
 
 // Sets default values
 ATank::ATank()
@@ -53,7 +54,6 @@ void ATank::Fire()
 			);
 		Projectile->LaunchProjectile(LaunchSpeed);
 		LastFireTime = FPlatformTime::Seconds();
-		UE_LOG(LogTemp, Warning, TEXT("%f"), LastFireTime);
 	}
 }
 
