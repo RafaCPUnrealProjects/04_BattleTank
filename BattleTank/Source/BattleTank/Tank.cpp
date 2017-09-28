@@ -53,6 +53,7 @@ void ATank::Fire()
 			);
 		Projectile->LaunchProjectile(LaunchSpeed);
 		LastFireTime = FPlatformTime::Seconds();
+		UE_LOG(LogTemp, Warning, TEXT("%f"), LastFireTime);
 	}
 }
 
