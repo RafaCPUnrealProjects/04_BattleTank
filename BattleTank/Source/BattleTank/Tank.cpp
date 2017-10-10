@@ -7,7 +7,7 @@
 #include "Projectile.h"
 #include "Engine/World.h"
 #include "Engine/StaticMeshSocket.h"
-#include "TankMovementComponent.h"
+
 
 // Sets default values
 ATank::ATank()
@@ -21,6 +21,7 @@ void ATank::BeginPlay()
 {
 	Super::BeginPlay();
 
+	TankAimingComponent = FindComponentByClass<UTankAimingComponent>();
 }
 
 void ATank::AimAt(FVector HitLocation)
