@@ -4,14 +4,14 @@
 
 #include "CoreMinimal.h"
 #include "BattleTank.h"
+#include "Camera/PlayerCameraManager.h"
+#include "Engine/World.h"
+#include "Engine/GameViewportClient.h"
 #include "GameFramework/Controller.h"
 #include "GameFramework/PlayerController.h"
-#include "Engine/World.h"
-#include "Camera/PlayerCameraManager.h"
 #include "TankPlayerController.generated.h"
 
 //forward declarations
-class ATank;
 class UTankAimingComponent;
 
 /**
@@ -29,8 +29,6 @@ public:
 	virtual void Tick(float DeltaSeconds) override;
 
 protected:
-	UFUNCTION(BlueprintCallable, Category = "Setup")
-	ATank* GetControlledTank() const;
 
 	UFUNCTION(BlueprintImplementableEvent, Category = "Setup")
 	void FoundAimingComponent(UTankAimingComponent* AimCompRef);
