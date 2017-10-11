@@ -49,9 +49,11 @@ protected:
 	virtual void BeginPlay() override;
 	
 	UPROPERTY(BlueprintReadOnly, Category = "State")
-	EFiringState FiringState = EFiringState::Aiming;
+	EFiringState FiringState = EFiringState::Reloading;
 
 private:
+	bool IsBarrelMoving();
+
 	UTankTurret* Turret = nullptr;	
 	UTankBarrel* Barrel = nullptr;
 	
@@ -65,4 +67,6 @@ private:
 	float ReloadTimeInSeconds = 3.f;
 
 	double LastFireTime = 0;
+
+	FVector AimDirection = FVector(0);
 };
