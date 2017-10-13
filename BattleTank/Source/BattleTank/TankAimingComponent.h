@@ -14,7 +14,8 @@ enum class EFiringState : uint8
 {
 	Locked, 
 	Aiming, 
-	Reloading
+	Reloading,
+	OutOfAmmo
 };
 
 class UTankBarrel; // Forward Declaration
@@ -40,9 +41,10 @@ public:
 
 	void AimAt(FVector HitLocation);
 
-	UFUNCTION(BlueprintCallable, Category = "Setup")
+	UFUNCTION(BlueprintCallable, Category = "Firing")
 	void Fire();
 
+	EFiringState GetFiringState() const;
 
 protected:
 	// Called when the game starts
@@ -50,6 +52,9 @@ protected:
 	
 	UPROPERTY(BlueprintReadOnly, Category = "State")
 	EFiringState FiringState = EFiringState::Reloading;
+
+	UPROPERTY(BlueprintReadOnly, Category = "Firing")
+	int32 CurrentAmmo = 0;
 
 private:
 	bool IsBarrelMoving();
@@ -61,7 +66,7 @@ private:
 	TSubclassOf<AProjectile> ProjectileBlueprint;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Firing")
-	float LaunchSpeed = 4000.f;
+	float LaunchSpeed = 20000.f;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Firing")
 	float ReloadTimeInSeconds = 3.f;
@@ -69,4 +74,7 @@ private:
 	double LastFireTime = 0;
 
 	FVector AimDirection = FVector(0);
+
+	UPROPERTY(EditDefaultsOnly, Category = "Setup")
+	int32 MaxAmmo = 10;
 };
