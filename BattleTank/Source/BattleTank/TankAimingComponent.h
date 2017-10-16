@@ -75,6 +75,6 @@ private:
 
 	FVector AimDirection = FVector(0);
 
-	UPROPERTY(EditDefaultsOnly, Category = "Setup")
+	UPROPERTY(EditDefaultsOnly, Category = "Firing")
 	int32 MaxAmmo = 10;
 };
