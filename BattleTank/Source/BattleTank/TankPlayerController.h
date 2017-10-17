@@ -43,6 +43,11 @@ private:
 
 	bool GetLookDirection(FVector2D &ScreenLocation, FVector &WorldDirection) const;
 
+	UFUNCTION()
+	void OnPossessedTankDeath();
+
+	virtual void SetPawn(APawn * InPawn) override;
+
 	UPROPERTY(EditDefaultsOnly)
 	float CrossHairXLocation = 0.5f;
 	

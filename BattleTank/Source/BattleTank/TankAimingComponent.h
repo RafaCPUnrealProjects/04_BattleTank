@@ -77,4 +77,7 @@ private:
 
 	UPROPERTY(EditDefaultsOnly, Category = "Firing")
 	int32 MaxAmmo = 10;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Firing")
+	float AimError = 0.1f;
 };
